@@ -1,0 +1,85 @@
+  <!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <title>D3: Bay Area Stats</title>
+  <script data-require="jquery@2.1.3" data-semver="2.1.3" src="https://code.jquery.com/jquery-2.1.3.min.js"></script>
+  <script src="jquery.auto-complete.min.js"></script>
+  <script src="https://d3js.org/d3.v3.min.js"></script>
+  <script src="https://d3js.org/topojson.v1.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/annyang/1.4.0/annyang.min.js"></script>
+  <link href="styles.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+  <div class="left-top">
+    <header>
+      <h1>Bay Area Stats</h1>
+    </header>
+    <form id="control-form" name="control-form">
+      <select id="stat-list">
+        <option value="0">Income</option>
+        <option value="1">Race/Ethnicity</option>
+        <option value="2">Place of Birth</option>
+        <option value="3">Age</option>
+        <option value="4">Housing</option>
+<!--         <option value="5">Unemployment</option>
+ -->
+      </select>
+      <select id="birth-list" class="hidden"></select>
+      <select id="race-list" class="hidden"></select>
+      <select id="asian-list" class="hidden"></select>
+      <select id="foreign-list" class="hidden"></select>
+      <select id="age-list" class="hidden"></select>
+      <select id="housing-list" class="hidden"></select>
+      <select id="housing-units-list" class="hidden"></select>
+      <select id="rent-list" class="hidden"></select>
+      <br>
+      <input id="select-input" type="text" placeholder="City or Zip Code">
+      <button id="select-button" type="button">Select</button>
+    </form>
+    <div class="tooltip-overlay">
+      <h4 class="tooltip-overlay-label"></h4>
+      <h3 class="tooltip-overlay-text"></h3>
+    </div>
+    <div class="tooltip">
+      <div class="tip-location"></div>
+      <div id="tip-container hidden">
+        <div class="tip-info"></div>
+        <h6 class="tip-description hidden"></h6>
+      </div>
+    </div>
+    <div class="legend-container">
+      <h5>Map Legend</h5>
+      <small class="legend-description"></small>
+      <div id="legend"></div>
+    </div>
+    <div class="links-container">
+      <div id="links">
+          <a class="hvr-bob" href="https://github.com/FrankBowers24/d3-bayarea"><img width="32" src="images/GitHub-Mark-64px.png"/></a>
+          <a class="hvr-bob" href="http://frank-bowers.ghost.io/bay-area-stats/"><img width="32" src="images/info-icon-64px.png"/></a>
+        </ul>
+    </div>
+  </div>
+  <div class="right-side"></div>
+
+  <script type="text/javascript" src="labeledPie.js"></script>
+  <script type="text/javascript" src="zipCodeMap.js"></script>
+  <script type="text/javascript" src="statMap.js"></script>
+  <script async src="//www.google-analytics.com/analytics.js"></script>
+  <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-61369418-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+
+</body>
+
+</html>
